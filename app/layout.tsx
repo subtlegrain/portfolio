@@ -4,8 +4,8 @@ import './globals.css'
 import './portfolio.css'
 
 export const metadata: Metadata = {
-  title: 'Sudip Khatri — AI Engineer · Python Backend Developer',
-  description: 'Personal portfolio of Sudip Khatri, an early-career AI Engineer and Python Backend Developer working with LLM applications, agentic workflows, RAG, and backend systems.',
+  title: 'Sudip Khatri | AI Engineer & Python Backend Developer',
+  description: 'AI Engineer and Python Backend Developer building LLM-powered applications, intelligent systems, and reliable backend services.',
   icons: {
     icon: [
       {
