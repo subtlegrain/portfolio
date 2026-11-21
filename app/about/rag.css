@@ -1,0 +1,419 @@
+/* ============================================================
+   CGS case study — RAG diagrams and status language
+   ============================================================ */
+.about-status {
+  display: inline-flex;
+  align-items: center;
+  width: max-content;
+  max-width: 100%;
+  padding: 4px 7px;
+  border: 1px solid var(--line-strong);
+  border-radius: var(--radius);
+  background: var(--bg-elevated);
+  color: var(--ink-soft);
+  font-family: var(--font-mono);
+  font-size: 8px;
+  line-height: 1.4;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.status-implemented {
+  border-color: var(--line-strong);
+  background: var(--bg-elevated);
+}
+
+.status-partial {
+  border-style: dashed;
+  color: var(--muted);
+}
+
+.status-legacy {
+  border-color: var(--line);
+  background: var(--surface);
+  color: var(--muted);
+}
+
+.status-proposed {
+  border-style: dotted;
+  color: var(--muted);
+}
+
+/* Architecture evolution */
+.evolution-block {
+  padding: 16px 0;
+  border-top: 1px solid var(--line);
+}
+
+.evolution-block:last-child {
+  border-bottom: 1px solid var(--line);
+}
+
+.evolution-heading {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+}
+
+.evolution-heading h3 {
+  margin: 0;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.evolution-block > p {
+  margin: 10px 0;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.8;
+}
+
+/* Legacy flow */
+.legacy-flow {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 7px;
+  padding: 12px;
+  border: 1px solid var(--line);
+  background: var(--bg-elevated);
+}
+
+.legacy-flow-step {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.legacy-flow-step span {
+  padding: 7px 9px;
+  border: 1px solid var(--line);
+  background: var(--bg);
+  color: var(--ink-soft);
+  font-family: var(--font-mono);
+  font-size: 9px;
+  letter-spacing: 0.02em;
+}
+
+.legacy-flow-step b {
+  color: var(--faint);
+  font-size: 12px;
+  font-weight: 400;
+}
+
+/* Embedding configuration */
+.embedding-config {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0 14px;
+  margin: 16px 0;
+  border: 1px solid var(--line);
+  background: var(--bg-elevated);
+}
+
+.embedding-config > * {
+  padding: 10px 12px;
+  border-bottom: 1px solid var(--line);
+  color: var(--muted);
+  font-size: 11px;
+  line-height: 1.6;
+}
+
+.embedding-config > *:nth-child(odd) {
+  border-right: 1px solid var(--line);
+}
+
+.embedding-config > span:first-child {
+  grid-column: 1 / -1;
+  background: var(--surface);
+  color: var(--ink-soft);
+  font-family: var(--font-mono);
+  font-size: 9px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.embedding-config strong {
+  color: var(--ink);
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.embedding-config code,
+.hybrid-diagram code,
+.hybrid-notes code {
+  padding: 1px 4px;
+  background: var(--surface);
+  color: var(--ink-soft);
+  font-family: var(--font-mono);
+  font-size: 0.95em;
+}
+
+.math-block {
+  overflow-wrap: anywhere;
+  padding: 18px;
+  border: 1px solid var(--line);
+  background: var(--bg-elevated);
+  color: var(--ink-soft);
+  font-family: var(--font-mono);
+  font-size: 13px;
+  line-height: 1.7;
+  text-align: center;
+}
+
+/* Steps and experiments */
+.ingestion-steps,
+.experiment-list {
+  margin: 16px 0 22px;
+  padding: 0;
+  border-top: 1px solid var(--line);
+  list-style: none;
+}
+
+.ingestion-steps li,
+.experiment-list li {
+  display: grid;
+  grid-template-columns: 33px minmax(0, 1fr);
+  gap: 10px;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--line);
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.7;
+}
+
+.ingestion-steps li span,
+.experiment-list li span {
+  padding-top: 2px;
+  color: var(--faint);
+  font-family: var(--font-mono);
+  font-size: 8px;
+}
+
+/* Chunking */
+.chunking-table {
+  border: 1px solid var(--line);
+  background: var(--bg-elevated);
+}
+
+.chunking-table > div {
+  display: grid;
+  grid-template-columns: 190px minmax(0, 1fr);
+  gap: 16px;
+  padding: 13px;
+  border-bottom: 1px solid var(--line);
+}
+
+.chunking-table > div:last-child {
+  border-bottom: 0;
+}
+
+.chunking-table strong {
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.chunking-table p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 11px;
+  line-height: 1.75;
+}
+
+/* Hybrid retrieval diagram */
+.hybrid-diagram {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--bg-elevated);
+}
+
+.hybrid-query,
+.hybrid-result {
+  width: min(100%, 620px);
+  padding: 11px 14px;
+  border: 1px solid var(--line-strong);
+  background: var(--bg);
+  color: var(--ink);
+  font-size: 12px;
+  font-weight: 600;
+  text-align: center;
+}
+
+.hybrid-query span,
+.hybrid-result small,
+.hybrid-result span {
+  display: block;
+  margin-top: 4px;
+  color: var(--muted);
+  font-size: 10px;
+  font-weight: 400;
+  line-height: 1.6;
+}
+
+.hybrid-paths {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  width: 100%;
+  margin-top: 13px;
+}
+
+.hybrid-path {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 7px;
+  padding: 12px;
+  border: 1px solid var(--line);
+  background: var(--bg);
+}
+
+.hybrid-path strong {
+  margin-bottom: 2px;
+  color: var(--ink);
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.hybrid-path span {
+  color: var(--muted);
+  font-size: 10px;
+  line-height: 1.5;
+  text-align: center;
+}
+
+.hybrid-down {
+  display: grid;
+  place-items: center;
+  height: 27px;
+  color: var(--faint);
+  font-size: 15px;
+}
+
+.hybrid-result code {
+  display: inline-block;
+  margin-left: 5px;
+}
+
+.hybrid-notes {
+  margin-top: 14px;
+  padding: 4px 0 4px 14px;
+  border-left: 2px solid var(--line-strong);
+}
+
+.hybrid-notes p {
+  margin: 7px 0;
+  color: var(--muted);
+  font-size: 11px;
+  line-height: 1.75;
+}
+
+/* Concepts */
+.concept-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin-top: 16px;
+  border-top: 1px solid var(--line);
+  border-left: 1px solid var(--line);
+}
+
+.concept-grid > div {
+  padding: 12px;
+  border-right: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  background: var(--bg-elevated);
+}
+
+.concept-grid strong {
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.concept-grid p {
+  margin: 5px 0 0;
+  color: var(--muted);
+  font-size: 11px;
+  line-height: 1.7;
+}
+
+/* Status key */
+.status-key {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+  margin-top: 18px;
+  padding-top: 14px;
+  border-top: 1px solid var(--line);
+}
+
+.status-key > strong {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.status-key > span {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--muted);
+  font-size: 10px;
+}
+
+.status-key .about-status {
+  flex-shrink: 0;
+}
+
+@media (max-width: 700px) {
+  .embedding-config {
+    grid-template-columns: 1fr;
+  }
+
+  .embedding-config > *:nth-child(odd) {
+    border-right: 0;
+  }
+
+  .embedding-config > span:first-child {
+    grid-column: auto;
+  }
+
+  .hybrid-paths,
+  .concept-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .chunking-table > div {
+    grid-template-columns: 1fr;
+    gap: 5px;
+  }
+
+  .legacy-flow {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .legacy-flow-step {
+    flex-direction: column;
+  }
+
+  .legacy-flow-step b {
+    transform: rotate(90deg);
+  }
+
+  .status-key > span {
+    align-items: flex-start;
+  }
+
+  .hybrid-diagram {
+    padding: 12px;
+  }
+}
