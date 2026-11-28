@@ -1,5 +1,5 @@
 import type { CSSProperties } from 'react'
-import { AmbientBackground } from './ambient-background'
+import { NeuralHero } from './neural-hero'
 import { ScrollReveal } from './scroll-reveal'
 import { SiteHeader } from './site-header'
 
@@ -76,51 +76,8 @@ export function PortfolioPage() {
         Skip to content
       </a>
       <SiteHeader />
-      <main id="main-content">
-        <section className="hero" id="home" aria-labelledby="hero-title">
-          <AmbientBackground />
-          <div className="hero-inner hero-inner--solo">
-            <div className="hero-copy">
-              <p className="hero-status">Open to junior AI &amp; automation roles</p>
-              <h1 className="hero-title" id="hero-title">
-                <span className="hero-title-first">Sudip</span>
-                <span className="hero-title-second">
-                  Khatri<span className="hero-title-dot">.</span>
-                </span>
-              </h1>
-              <p className="hero-role">
-                AI Engineer <span aria-hidden="true">·</span> Python Backend Developer
-              </p>
-              <p className="hero-intro">
-                I&apos;m an early-career AI Engineer and Python Backend Developer. My recent work has involved backend
-                engineering for a collaborative content-generation system: asynchronous AI workflows, structured output,
-                document ingestion, retrieval components, and LMS authoring integration.
-              </p>
-              <div className="hero-actions">
-                <a className="btn btn-primary" href="#projects">
-                  Explore my work <span aria-hidden="true">↗</span>
-                </a>
-                <a className="btn btn-secondary" href="/sudip-khatri-cv.pdf" target="_blank" rel="noreferrer">
-                  View CV <span className="btn-tag">PDF</span>
-                </a>
-                <a className="link-arrow" href="#contact">
-                  Contact me <span aria-hidden="true">↗</span>
-                </a>
-              </div>
-              <div className="hero-socials">
-                <a href="https://github.com/subtlegrain" target="_blank" rel="noreferrer">
-                  GitHub <small>subtlegrain</small>
-                </a>
-                <a href="https://linkedin.com/in/sudip-khatri-993b40240" target="_blank" rel="noreferrer">
-                  LinkedIn <small>Sudip Khatri</small>
-                </a>
-              </div>
-            </div>
-          </div>
-          <a className="scroll-cue" href="#about">
-            <span aria-hidden="true">↓</span> Scroll to explore
-          </a>
-        </section>
+      <main id="main-content" tabIndex={-1}>
+        <NeuralHero />
 
         <Section
           id="about"

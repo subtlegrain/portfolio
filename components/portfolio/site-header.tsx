@@ -105,7 +105,7 @@ export function SiteHeader({ basePath = '' }: { basePath?: string }) {
   return (
     <header className="site-header">
       <div className="site-header-inner">
-        <a className="wordmark" href={`${basePath}#home`} aria-label="Sudip Khatri — home">
+        <a className="wordmark" href={`${basePath}#home`} aria-label="Sudip Khatri. AI Engineer — home">
           <span className="wordmark-name">
             Sudip Khatri<span className="wordmark-dot">.</span>
           </span>
